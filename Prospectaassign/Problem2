@@ -1,0 +1,42 @@
+
+
+Theoretical Challenge
+
+Suppose you have a CSV file with the data below.
+
+A1: 5, A2: 7, A3: 9, B1: 3, B2: 8, B3: =4+5, C1: =5+A1, C2: =A2+B2, C3: =C2+B3
+
+This can be represented in an excel sheet below:
+
+A B C
+
+1 5 3 =5+A1
+
+2 7 8 =A2+B2
+
+3 9 =4+5 =C2+B3
+
+I want a program that will take the CSV input above and produce CSV output with the results. If it is a value, then return a value. If it is a formula then calculate the formula and return the value of that formula.
+
+1. How will you tackle the challenge above?
+=> As per the given csv file , i can calculate the values as per rows given and formulas mentioned.
+As in the first row C = 5 +A1 ,here firstly i will go to  the A1 cell and get the value and calculate it. 
+c2 = A2+B2 , here first of all i will get the A2 value and then B2 value and  then finally i will add both 
+of them  hence i will get the calculated value of c2. here b3 = 4+5  i will calculate this first and
+ then jump to c3 which c2+b3 hence both the values are  present i will calculate the c3.
+
+
+
+2. What type of errors you would you check for?
+circular dependency may occur due to as formula is given  for ex : in c2 cell a2+b2 is given 
+here c2 is calling to a2 and b2 .
+And also We can get error like null pointer Exception because as formula is given 
+and if the address is not found then we will get the null pointer exception and it can be handled by
+ giving default value as 0 or 1.
+Format exception cann occur if  some one enter the wrong format so need to handle that error too.
+
+3. How might a user break your code?
+
+
+
+
